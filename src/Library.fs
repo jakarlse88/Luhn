@@ -4,6 +4,7 @@
 open FSharp.Collections
 open FSharp.Core
 open Luhn.Types
+open System
 
 
 let private processDigit shouldProcess i =
@@ -34,7 +35,7 @@ let private processDigits mode input =
                      |> applyFnAndPrepend x acc
                      |> loop xs ( not shouldProcess )
                      
-    loop input ( mode = ValidationMode.CheckDigitExcluded ) []
+    loop input ( mode = ValidationMode.CheckDigitIncluded ) []
     
     
 let private mod10 i =
@@ -45,7 +46,7 @@ let private luhn ( input : string ) mode =
     let processDigits' = processDigits mode
     
     input
-        |> Seq.map int
+        |> Seq.map ( fun x -> x.ToString() |> int )
         |> Seq.rev
         |> Seq.toList 
         |> processDigits' 
