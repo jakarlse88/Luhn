@@ -1,5 +1,67 @@
-﻿namespace ADS.Lib.Luhn
+﻿module internal Luhn.Core
 
-module Say =
-    let hello name =
-        printfn "Hello %s" name
+
+open FSharp.Collections
+open FSharp.Core
+open Luhn.Types
+
+
+let private processDigit shouldProcess i =
+    if shouldProcess then 
+        let i' = i * 2
+    
+        if i' > 9
+            then i' - 9
+            else i'
+    
+    else
+        i
+        
+        
+let private applyFnAndPrepend i m fn =
+    let i' = fn i
+    i' :: m
+        
+        
+let private processDigits mode input =
+    let rec loop input' shouldProcess acc =
+        match input' with
+        | [ ]     -> acc
+        | [ x ]   -> processDigit shouldProcess 
+                     |> applyFnAndPrepend x acc
+                     |> loop [] ( not shouldProcess ) 
+        | x :: xs -> processDigit shouldProcess
+                     |> applyFnAndPrepend x acc
+                     |> loop xs ( not shouldProcess )
+                     
+    loop input ( mode = ValidationMode.CheckDigitExcluded ) []
+    
+    
+let private mod10 i =
+    i % 10 = 0
+    
+    
+let private luhn ( input : string ) mode =
+    let processDigits' = processDigits mode
+    
+    input
+        |> Seq.map int
+        |> Seq.rev
+        |> Seq.toList 
+        |> processDigits' 
+        |> List.reduce ( fun acc i -> acc + i )
+        |> mod10
+        
+        
+let validate mode input =
+    try
+        luhn input mode
+        |> Result.Ok
+    with ex ->
+        Result.Error ex.Message 
+    
+   // Starting from the right, double every second digit
+   //   If the result of the previous operation is > 9,
+   //   subtract 9 from the product
+   // Sum every digit
+   // If the sum is evenly divisible by 10, the input is valid.

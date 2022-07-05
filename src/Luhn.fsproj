@@ -6,7 +6,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="Types.fs" />
         <Compile Include="Library.fs" />
+        <Compile Include="API.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="LanguageExt.Core" Version="4.3.2-beta" />
     </ItemGroup>
 
 </Project>
