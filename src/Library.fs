@@ -4,7 +4,6 @@
 open FSharp.Collections
 open FSharp.Core
 open Luhn.Types
-open System
 
 
 let private processDigit shouldProcess i =
@@ -60,9 +59,3 @@ let validate mode input =
         |> Result.Ok
     with ex ->
         Result.Error ex.Message 
-    
-   // Starting from the right, double every second digit
-   //   If the result of the previous operation is > 9,
-   //   subtract 9 from the product
-   // Sum every digit
-   // If the sum is evenly divisible by 10, the input is valid.

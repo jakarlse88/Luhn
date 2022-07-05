@@ -3,8 +3,8 @@
 
 open LanguageExt
 open Luhn.Core
-open System.Text.RegularExpressions
 open Luhn.Types
+open System.Text.RegularExpressions
 
 
 let Validate( input : string , mode : ValidationMode ) =
@@ -14,5 +14,5 @@ let Validate( input : string , mode : ValidationMode ) =
         Fin<bool>.Fail "Illegal character(s) in input string"
     else
         match validate mode input' with
-        | Error errorValue -> errorValue |> Fin<bool>.Fail
-        | Ok resultValue   -> resultValue 
+        | Error errorValue -> errorValue  |> Fin<bool>.Fail
+        | Ok resultValue   -> resultValue |> Fin<bool>.Succ

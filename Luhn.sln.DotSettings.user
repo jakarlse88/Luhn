@@ -1,10 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=020859ae_002D1298_002D4748_002D85b0_002D032f93fefba3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;Luhn.Test&amp;gt; #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="\\wsl$\Ubuntu-22.04\home\jakarlse\source\ADS.Lib.Luhn\test" Presentation="&amp;lt;Luhn.Test&amp;gt;" /&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8594511b_002Daf1c_002D48a3_002D8ecd_002Df919b4bf2dc4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;Luhn.Test&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="\\wsl$\Ubuntu-22.04\home\jakarlse\source\ADS.Lib.Luhn\test" Presentation="&amp;lt;Luhn.Test&amp;gt;" /&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	
-	
-	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=baf602d4_002D0f18_002D4c03_002Db2a0_002D831084b420eb_0023Luhn/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\jon.karlsen\AppData\Local\JetBrains\Rider2022.1\resharper-host\temp\Rider\vAny\CoverageData\_Luhn.88483937\Snapshot\snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8dda6322_002D3b98_002D41fc_002Da8e7_002Db4fb7ac28e29/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;Luhn.Test&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\jon.karlsen\Documents\source\Luhn\test" Presentation="&amp;lt;Luhn.Test&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
