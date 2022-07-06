@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PackageId>jakarlse.validation</PackageId>
+        <PackageVersion>1.0.0-alpa1.1</PackageVersion>
+        <Authors>Jon Karlsen</Authors>
+        <Title>Validation</Title>
+        <Description>Simple validation of numeric strings using the Luhn/mod10 algorithm.</Description>
+        <PackageProjectUrl>https://github.com/jakarlse88/Luhn</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/jakarlse88/Luhn</RepositoryUrl>
+        <AssemblyName>Jakarlse.Validation</AssemblyName>
+        <RootNamespace>Jakarlse.Validation</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Luhn\Types.fs" />
+        <Compile Include="Luhn\Core.fs" />
+        <Compile Include="Lib.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="LanguageExt.Core" Version="4.2.9" />
+    </ItemGroup>
+
+</Project>

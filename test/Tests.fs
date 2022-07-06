@@ -1,9 +1,9 @@
 module Tests
 
 
+open Jakarlse.Validation.API
+open Jakarlse.Validation.Luhn.Types
 open LanguageExt
-open Luhn.API
-open Luhn.Types
 open Xunit
 
 
@@ -14,7 +14,7 @@ open Xunit
 [<InlineData("    4539319503436467")>]
 [<InlineData("    4539319503436467      ")>]
 let ``Returns Fin.Succ for valid inputs that pass Luhn validation`` testString =
-    let result = Validate ( testString , ValidationMode.CheckDigitExcluded )
+    let result = Luhn ( testString , ValidationMode.CheckDigitExcluded )
     
     Assert.IsAssignableFrom<Fin<bool>>( result ) |> ignore
     Assert.True( result.IsSucc )
@@ -29,7 +29,7 @@ let ``Returns Fin.Succ for valid inputs that pass Luhn validation`` testString =
 [<InlineData("000005539319503436467")>]
 [<InlineData("      000005539319503436467")>]
 let ``Returns Fin.Succ for valid inputs that do not pass Luhn validation`` testString =
-    let result = Validate ( testString , ValidationMode.CheckDigitExcluded )
+    let result = Luhn ( testString , ValidationMode.CheckDigitExcluded )
 
     Assert.IsAssignableFrom<Fin<bool>>( result ) |> ignore
     Assert.True( result.IsSucc )
@@ -42,7 +42,7 @@ let ``Returns Fin.Succ for valid inputs that do not pass Luhn validation`` testS
 [<InlineData("/4539319503436467")>]
 [<InlineData("-4539319503436467")>]
 let ``Returns Fin.Error for invalid inputs`` testString =
-    let result = Validate ( testString , ValidationMode.CheckDigitExcluded )
+    let result = Luhn ( testString , ValidationMode.CheckDigitExcluded )
     
     Assert.IsAssignableFrom<Fin<bool>>( result ) |> ignore
     Assert.True( result.IsFail )
